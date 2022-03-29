@@ -1,5 +1,8 @@
 FROM python:3
-
+RUN apt-get -yq install libblas3 liblapack3 liblapack-dev libblas-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* 
+    
 WORKDIR /usr/src/app
 
 COPY requirements.txt ./
