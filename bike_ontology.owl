@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://disk-project.org/resources/question/"
+     xml:base="http://disk-project.org/resources/question/"
+     xmlns:ns0="http://disk-project.org/ontology/disk#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://disk-project.org/resources/question/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasConstraints -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasConstraints"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasFixedOptions -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasFixedOptions"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasQuestionPattern -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasQuestionPattern"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasQuestionTemplate -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasQuestionTemplate"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasQuestionVariable -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasQuestionVariable"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#hasVariableName -->
+
+    <owl:AnnotationProperty rdf:about="http://disk-project.org/ontology/disk#hasVariableName"/>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#Question -->
+
+    <owl:Class rdf:about="http://disk-project.org/ontology/disk#Question"/>
+    
+
+
+    <!-- http://disk-project.org/ontology/disk#QuestionVariable -->
+
+    <owl:Class rdf:about="http://disk-project.org/ontology/disk#QuestionVariable"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://disk-project.org/resources/question/ClimateVariable1 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/ClimateVariable1">
+        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasVariableName>?ClimateVariable1</ns0:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/ClimateVariable2 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/ClimateVariable2">
+        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasVariableName>?ClimateVariable2</ns0:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/ClimateVariable3 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/ClimateVariable3">
+        <ns0:hasFixedOptions>Temperature, Humidity, Wind</ns0:hasFixedOptions>
+        <ns0:hasVariableName>?ClimateVariable3</ns0:hasVariableName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://disk-project.org/resources/question/HQ3 -->
+
+    <owl:NamedIndividual rdf:about="http://disk-project.org/resources/question/HQ3">
+        <rdf:type rdf:resource="http://disk-project.org/ontology/disk#Question"/>
+        <ns0:hasQuestionPattern>:goal hyp:associatedWith ?ClimateVariable1 .
+:goal hyp:associatedWith ?ClimateVariable2 .
+:goal hyp:associatedWith ?ClimateVariable3 .</ns0:hasQuestionPattern>
+        <ns0:hasQuestionTemplate>Is the number of rented bikes associated with ?ClimateVariable1, ?ClimateVariable2 and ?ClimateVariable3</ns0:hasQuestionTemplate>
+        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable1"/>
+        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable2"/>
+        <ns0:hasQuestionVariable rdf:resource="http://disk-project.org/resources/question/ClimateVariable3"/>
+        <rdfs:label>Is the number of rented bikes associated with &lt;Climate variable 1&gt;, &lt;Climate variable 2&gt; and &lt;Climate variable 3&gt;?</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
