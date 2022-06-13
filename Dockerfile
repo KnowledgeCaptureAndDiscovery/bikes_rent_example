@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.9
 RUN apt-get update \ 
     && apt-get -yq install libblas3 liblapack3 liblapack-dev libblas-dev gfortran libatlas-base-dev \
     && apt-get clean \
