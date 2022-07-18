@@ -7,7 +7,9 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--inputs", nargs='*', help="Input file", required=True)
-parser.add_argument("--output", help="Output file", required=True)
+parser.add_argument("--variables", nargs='*', help="Variables to be used", required=True)
+parser.add_argument("--summary", help="Summary", default="summary.txt")
+parser.add_argument("--pi_value", help="Pi value", default="pi.txt")
 args = parser.parse_args()
 
 def merge_multiple_dataframe(inputs):
@@ -16,23 +18,52 @@ def merge_multiple_dataframe(inputs):
         df = df.append(pd.read_csv(input))
     return df
 
+def map_variable_name(variable: str) -> str:
+    """Find the csv variable name from a full name
+    For example: temperature -> temp
+
+    Args:
+        variable (str): full name 
+
+    Returns:
+        str: csv variable name
+    """
+    map_dict = {
+        "temperature": "temp",
+        "humidity": "hum"
+    }
+    if variable in map_dict:
+        return map_dict[variable]
+    return None
+
+
+
+def check_variables(variables, df):
+    for index in range(len(variables)):
+        variable = variables[index]
+        if variable not in df.columns:
+            if map_variable_name(variable) is None:
+                print("Variable " + variable + " not found in dataframe")
+                exit(1)
+            variables[index] = map_variable_name(variable)
+
 
 
 # Import data
 bikes = merge_multiple_dataframe(args.inputs)
 
+# Get headers of the dataframe
+arg_variables = args.variables
+check_variables(arg_variables, bikes)
+# concatenate list of strings using comma
+model_variables = " + ".join(arg_variables)
+model_variables = "cnt" + " ~ " + model_variables
+print(f"""Using variables: {model_variables}""")
+
 # Fit model1
-model1 = sm.OLS.from_formula('cnt ~ temp + hum + windspeed', data=bikes).fit()
+model1 = sm.OLS.from_formula(model_variables, data=bikes).fit()
 
-# Fit model2
-model2 = sm.OLS.from_formula('cnt ~ temp + hum + windspeed + weekday + atemp', data=bikes).fit()
-
-# Run the F-test and print results
-anova_results = anova_lm(model1, model2)
-print(anova_results.round(2))
-
-#If the p-value is less than 0.05, then we believe that at least one of the additional predictors in
-#model2 is significantly different from 0. Therefore, we reject the null hypothesis and choose the larger model (model2).
-
-#If the p-value is greater than 0.05, then we believe that both additional predictors in model2 are not significantly different from 0.
-#Therefore, we would choose the smaller model (model1).
+with open(args.summary, "w") as f:
+    f.write(str(model1.summary()))
+with open(args.pi_value, "w") as f:
+    f.write(str(model1.pvalues[0]))
