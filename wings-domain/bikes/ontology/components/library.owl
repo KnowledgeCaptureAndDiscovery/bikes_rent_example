@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://localhost:8080/wings-portal/export/users/admin/bikes/data/ontology.owl#"
+    xmlns:j.1="http://www.wings-workflows.org/ontology/resource.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.2="http://localhost:8080/wings-portal/export/users/admin/bikes/components/library.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:j.3="http://www.wings-workflows.org/ontology/component.owl#"
+      xml:base="http://localhost:8080/wings-portal/export/users/admin/bikes/components/library.owl">
+      <rdf:Description rdf:about="">
+            <owl:versionInfo>1</owl:versionInfo>
+      </rdf:Description>
+      <owl:Class rdf:ID="bikes_rentClass">
+            <rdfs:subClassOf rdf:resource="#bikesClass"/>
+      </owl:Class>
+      <owl:DatatypeProperty rdf:about="http://www.wings-workflows.org/ontology/component.owl#isNoOperation"/>
+      <owl:DatatypeProperty rdf:about="http://www.wings-workflows.org/ontology/component.owl#hasVersion"/>
+      <j.1:HardwareDependency>
+            <j.1:requiresStorageGB rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.0</j.1:requiresStorageGB>
+            <j.1:needs64bit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >false</j.1:needs64bit>
+            <j.1:requiresMemoryGB rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+            >0.0</j.1:requiresMemoryGB>
+      </j.1:HardwareDependency>
+      <j.2:bikes_rentClass rdf:ID="bikes_rent">
+            <j.3:hasInput>
+                  <j.3:ParameterArgument rdf:ID="bikes_rent_variable2">
+                        <j.3:hasArgumentName>-p2</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</j.3:hasDimensionality>
+                        <j.3:hasValue></j.3:hasValue>
+                        <j.3:hasArgumentID>variable2</j.3:hasArgumentID>
+                  </j.3:ParameterArgument>
+            </j.3:hasInput>
+            <j.3:hasOutput>
+                  <j.3:DataArgument rdf:ID="bikes_rent_pi_value">
+                        <j.3:hasArgumentID>pi_value</j.3:hasArgumentID>
+                        <j.3:hasArgumentName>-o1</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</j.3:hasDimensionality>
+                        <rdf:type rdf:resource="../data/ontology.owl#txt"/>
+                  </j.3:DataArgument>
+            </j.3:hasOutput>
+            <j.3:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+            >9</j.3:hasVersion>
+            <j.3:hasOutput>
+                  <j.3:DataArgument rdf:ID="bikes_rent_sumarry">
+                        <j.3:hasArgumentID>sumarry</j.3:hasArgumentID>
+                        <j.3:hasArgumentName>-o2</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</j.3:hasDimensionality>
+                        <rdf:type rdf:resource="../data/ontology.owl#txt"/>
+                  </j.3:DataArgument>
+            </j.3:hasOutput>
+            <j.3:hasInput>
+                  <j.3:ParameterArgument rdf:ID="bikes_rent_variable3">
+                        <j.3:hasArgumentName>-p3</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</j.3:hasDimensionality>
+                        <j.3:hasValue></j.3:hasValue>
+                        <j.3:hasArgumentID>variable3</j.3:hasArgumentID>
+                  </j.3:ParameterArgument>
+            </j.3:hasInput>
+            <j.3:hasInput>
+                  <j.3:ParameterArgument rdf:ID="bikes_rent_variable1">
+                        <j.3:hasArgumentName>-p1</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >0</j.3:hasDimensionality>
+                        <j.3:hasValue></j.3:hasValue>
+                        <j.3:hasArgumentID>variable1</j.3:hasArgumentID>
+                  </j.3:ParameterArgument>
+            </j.3:hasInput>
+            <j.3:hasDocumentation></j.3:hasDocumentation>
+            <j.3:hasLocation>/usr/local/tomcat/temp/domain-16697577798994261709-temp/bikes/code/library/bikes_rent</j.3:hasLocation>
+            <j.3:hasInput>
+                  <j.3:DataArgument rdf:ID="bikes_rent_csv_files">
+                        <j.3:hasArgumentID>csv_files</j.3:hasArgumentID>
+                        <j.3:hasArgumentName>-i1</j.3:hasArgumentName>
+                        <j.3:hasDimensionality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"
+                        >1</j.3:hasDimensionality>
+                        <rdf:type rdf:resource="../data/ontology.owl#bikes"/>
+                  </j.3:DataArgument>
+            </j.3:hasInput>
+            <j.3:isConcrete rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</j.3:isConcrete>
+            <j.1:hasHardwareDependency>
+                  <j.1:HardwareDependency>
+                        <j.1:requiresStorageGB rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                        >0.0</j.1:requiresStorageGB>
+                        <j.1:needs64bit rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+                        >false</j.1:needs64bit>
+                        <j.1:requiresMemoryGB rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+                        >0.0</j.1:requiresMemoryGB>
+                  </j.1:HardwareDependency>
+            </j.1:hasHardwareDependency>
+      </j.2:bikes_rentClass>
+</rdf:RDF>
