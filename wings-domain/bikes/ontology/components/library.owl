@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:j.0="http://localhost:8080/wings-portal/export/users/admin/bikes/data/ontology.owl#"
+    xmlns:j.0="https://wings.dev.disk.isi.edu/wings-portal/export/users/admin/bikes/data/ontology.owl#"
     xmlns:j.1="http://www.wings-workflows.org/ontology/resource.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:j.2="http://localhost:8080/wings-portal/export/users/admin/bikes/components/library.owl#"
+    xmlns:j.2="https://wings.dev.disk.isi.edu/wings-portal/export/users/admin/bikes/components/library.owl#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     xmlns:j.3="http://www.wings-workflows.org/ontology/component.owl#"
-      xml:base="http://localhost:8080/wings-portal/export/users/admin/bikes/components/library.owl">
+      xml:base="https://wings.dev.disk.isi.edu/wings-portal/export/users/admin/bikes/components/library.owl">
       <rdf:Description rdf:about="">
             <owl:versionInfo>1</owl:versionInfo>
       </rdf:Description>
