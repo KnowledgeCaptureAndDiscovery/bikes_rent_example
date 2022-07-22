@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--inputs", nargs='*', help="Input file", required=True)
 parser.add_argument("--variables", nargs='*', help="Variables to be used", required=True)
 parser.add_argument("--summary", help="Summary", default="summary.txt")
-parser.add_argument("--pi_value", help="Pi value", default="pi.txt")
+parser.add_argument("--pi_value", help="Pi value", default="p_value")
 args = parser.parse_args()
 
 def merge_multiple_dataframe(inputs):
