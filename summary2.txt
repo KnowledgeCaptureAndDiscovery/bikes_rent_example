@@ -4,7 +4,7 @@ Dep. Variable:                    cnt   R-squared:                       0.536
 Model:                            OLS   Adj. R-squared:                  0.531
 Method:                 Least Squares   F-statistic:                     97.11
 Date:                Tue, 26 Jul 2022   Prob (F-statistic):           7.70e-81
-Time:                        15:16:40   Log-Likelihood:                -4400.9
+Time:                        15:30:21   Log-Likelihood:                -4400.9
 No. Observations:                 511   AIC:                             8816.
 Df Residuals:                     504   BIC:                             8845.
 Df Model:                           6                                         
