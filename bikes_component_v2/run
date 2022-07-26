@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+checkExitCode() {
+if [ $? -ne 0 ]; then
+    echo "Error"
+    exit 1;
+fi
+}
+
+BASEDIR=`dirname $0`
+
+. $BASEDIR/io.sh 1 3 2 "$@"
+
+set -x
+docker run \
+    -v --rm \
+    -v wings_dev_wings_data:/opt/wings mosorio/bikes_rent \
+    python script.py \
+        --inputs $INPUTS1 \
+    	--variables $PARAMS1 $PARAMS2 $PARAMS3 \ 
+		--pi_value $OUTPUTS1 \
+		--summary $OUTPUTS2
+checkExitCode

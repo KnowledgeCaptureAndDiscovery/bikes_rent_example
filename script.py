@@ -30,16 +30,12 @@ def map_variable_name(variable: str) -> str:
     """
     map_dict = {
         "temperature": "temp",
-        "humidity": "hum"
+        "humidity": "hum",
+        "wind": "windspeed"
     }
     if variable in map_dict:
         return map_dict[variable]
     return None
-
-
-def download_file(url, filename):
-    import urllib.request
-    urllib.request.urlretrieve(url, filename)
 
 def check_variables(variables, df):
     for index in range(len(variables)):
@@ -57,6 +53,10 @@ bikes = merge_multiple_dataframe(args.inputs)
 
 # Get headers of the dataframe
 arg_variables = args.variables
+
+# Convert to lowercase array
+arg_variables = [variable.lower() for variable in arg_variables]
+
 check_variables(arg_variables, bikes)
 # concatenate list of strings using comma
 model_variables = " + ".join(arg_variables)
