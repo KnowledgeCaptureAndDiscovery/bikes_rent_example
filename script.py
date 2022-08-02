@@ -9,7 +9,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--inputs", nargs='*', help="Input file", required=True)
 parser.add_argument("--variables", nargs='*', help="Variables to be used", required=True)
 parser.add_argument("--summary", help="Summary", default="summary.txt")
-parser.add_argument("--pi_value", help="Pi value", default="p_value")
+parser.add_argument("--p_value", help="p value", default="p_value")
 args = parser.parse_args()
 
 def merge_multiple_dataframe(inputs):
@@ -68,5 +68,7 @@ model1 = sm.OLS.from_formula(model_variables, data=bikes).fit()
 
 with open(args.summary, "w") as f:
     f.write(str(model1.summary()))
-with open(args.pi_value, "w") as f:
+with open(args.p_value, "w") as f:
     f.write(str(model1.pvalues[0]))
+
+print(model1.summary())

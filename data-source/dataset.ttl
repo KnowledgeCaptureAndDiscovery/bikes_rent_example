@@ -12,7 +12,7 @@
         <http://www.w3.org/ns/dcat#downloadURL>
                 <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2019-2020-ny.csv>;
         <http://purl.org/dc/terms/Location>
-            "New York City" ;
+            "New York" ;
         <http://www.w3.org/ns/dcat#mediaType>
                 <http://www.iana.org/assignments/media-types/text/csv> .
 
@@ -27,7 +27,7 @@
         <http://www.w3.org/ns/dcat#compressFormat>
                 <http://www.iana.org/assignments/media-types/application/gzip> ;
         <http://purl.org/dc/terms/Location>
-            "New York City" ;
+            "New York" ;
         <http://www.w3.org/ns/dcat#downloadURL>
                 <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2021-ny.csv>;
         <http://www.w3.org/ns/dcat#mediaType>
