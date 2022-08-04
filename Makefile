@@ -11,7 +11,7 @@ run-docker:
 					bikes-2021-ny.csv \
 					bikes-2019-2020-ny.csv \
 				--variables Temperature Humidity Wind Season None \
-				--r_squared p_value.txt \
+				--r_squared r_squared.txt \
 				--summary summary.txt
 	
 run-local:
@@ -21,5 +21,5 @@ run-local:
 			data/bikes-2021-ny.csv \
 			data/bikes-2019-2020-ny.csv \
 		--variables temp  hum  windspeed  season  holiday  weekday  atemp None \
-		--r_squared p_value.txt \
+		--r_squared r_squared.txt \
 		--summary summary.txt
