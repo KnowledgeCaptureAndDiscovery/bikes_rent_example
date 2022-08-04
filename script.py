@@ -3,14 +3,6 @@ import pandas as pd
 import statsmodels.api as sm
 from statsmodels.stats.anova import anova_lm
 
-import argparse
-
-parser = argparse.ArgumentParser()
-parser.add_argument("--inputs", nargs='*', help="Input file", required=True)
-parser.add_argument("--variables", nargs='*', help="Variables to be used", required=True)
-parser.add_argument("--summary", help="Summary", default="summary.txt")
-parser.add_argument("--p_value", help="p value", default="p_value")
-args = parser.parse_args()
 
 def merge_multiple_dataframe(inputs):
     df = pd.DataFrame()
@@ -31,7 +23,13 @@ def map_variable_name(variable: str) -> str:
     map_dict = {
         "temperature": "temp",
         "humidity": "hum",
-        "wind": "windspeed"
+        "wind": "windspeed",
+        "wind speed": "windspeed",
+        "month": "mnth",
+        "workday": "workingday",
+        "weather situation": "weathersit",
+        "ambient temperature": "atemp",
+
     }
     if variable in map_dict:
         return map_dict[variable]
@@ -46,29 +44,38 @@ def check_variables(variables, df):
                 exit(1)
             variables[index] = map_variable_name(variable)
 
+def parsed_args(args):
+    inputs = args.inputs
+    variables = args.variables
+    summary = args.summary
+    r_squared = args.r_squared
+    return inputs, variables, summary, r_squared
 
 
-# Import data
-bikes = merge_multiple_dataframe(args.inputs)
+def write_file(file, content):
+    with open(file, "w") as f:
+        f.write(content)
 
-# Get headers of the dataframe
-arg_variables = args.variables
+def run_model(inputs, variables, summary_output, r_squared_output):
+    data = merge_multiple_dataframe(inputs)
+    # Convert to lowercase array
+    if "None" in variables:
+        variables.remove("None")
+    variables = [variable.lower() for variable in variables]
+    check_variables(variables, data)
+    # concatenate list of strings using comma
+    model_variables = " + ".join(variables)
+    model_variables = "cnt" + " ~ " + model_variables
+    print(f"""Using variables: {model_variables}""")
 
-# Convert to lowercase array
-arg_variables = [variable.lower() for variable in arg_variables]
+    model = sm.OLS.from_formula(model_variables, data=data).fit()
 
-check_variables(arg_variables, bikes)
-# concatenate list of strings using comma
-model_variables = " + ".join(arg_variables)
-model_variables = "cnt" + " ~ " + model_variables
-print(f"""Using variables: {model_variables}""")
-
-# Fit model1
-model1 = sm.OLS.from_formula(model_variables, data=bikes).fit()
-
-with open(args.summary, "w") as f:
-    f.write(str(model1.summary()))
-with open(args.p_value, "w") as f:
-    f.write(str(model1.pvalues[0]))
-
-print(model1.summary())
+    if r_squared_output is not None:
+        write_file(r_squared_output, str(model.rsquared))
+    else:
+        print(f"""R squared: {model.rsquared}""")
+    
+    if summary_output is not None:
+        write_file(summary_output, model.summary().as_text())
+    else:
+        print(model.summary().as_text())

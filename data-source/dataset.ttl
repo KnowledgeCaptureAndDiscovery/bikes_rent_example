@@ -1,34 +1,33 @@
-
-<https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2019-2020-ny.csv>
+<https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2019-2020-ny.csv>
         a       <http://www.w3.org/ns/dcat#Distribution> ;
         <http://www.w3.org/2000/01/rdf-schema#label>
                 "Bikes info yearn 2019 and 2020 - NYC" ;
         <http://disk-project.org/ontology/disk#hasVariableName>
-                "Temperature" , "Wind" , "Season" ;
+                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday" , "None" ;
+        <http://purl.org/dc/terms/Location>
+                "New York" ;
         <http://www.w3.org/ns/dcat#accessURL>
-                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2019-2020-ny.csv>;
+                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2019-2020-ny.csv> ;
         <http://www.w3.org/ns/dcat#compressFormat>
                 <http://www.iana.org/assignments/media-types/application/gzip> ;
         <http://www.w3.org/ns/dcat#downloadURL>
-                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2019-2020-ny.csv>;
-        <http://purl.org/dc/terms/Location>
-            "New York" ;
+                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2019-2020-ny.csv> ;
         <http://www.w3.org/ns/dcat#mediaType>
                 <http://www.iana.org/assignments/media-types/text/csv> .
 
-<https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2021-ny.csv>
+<https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2021-ny.csv>
         a       <http://www.w3.org/ns/dcat#Distribution> ;
         <http://www.w3.org/2000/01/rdf-schema#label>
                 "Bikes info yearn 2021 - NYC" ;
         <http://disk-project.org/ontology/disk#hasVariableName>
-                "Temperature" , "Wind" , "Season" ;
+                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday" , "None" ;
+        <http://purl.org/dc/terms/Location>
+                "New York" ;
         <http://www.w3.org/ns/dcat#accessURL>
-                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2021-ny.csv>;
+                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2021-ny.csv> ;
         <http://www.w3.org/ns/dcat#compressFormat>
                 <http://www.iana.org/assignments/media-types/application/gzip> ;
-        <http://purl.org/dc/terms/Location>
-            "New York" ;
         <http://www.w3.org/ns/dcat#downloadURL>
-                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/bikes-2021-ny.csv>;
+                <https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2021-ny.csv> ;
         <http://www.w3.org/ns/dcat#mediaType>
                 <http://www.iana.org/assignments/media-types/text/csv> .

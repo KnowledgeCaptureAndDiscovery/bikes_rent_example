@@ -18,7 +18,7 @@ docker run \
     -v wings_dev_wings_data:/opt/wings mosorio/bikes_rent:1.0.0 \
     python script.py \
         --inputs $INPUTS1 \
-		--pi_value $OUTPUTS1 \
+		--r_squared $OUTPUTS1 \
 		--summary $OUTPUTS2 \
     	--variables $PARAMS1 $PARAMS2 $PARAMS3
 checkExitCode
