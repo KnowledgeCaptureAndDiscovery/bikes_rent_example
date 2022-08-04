@@ -57,6 +57,16 @@ def write_file(file, content):
         f.write(content)
 
 def run_model(inputs, variables, summary_output, r_squared_output):
+    """
+    Args:
+        inputs (list): list of input files
+        variables (list): list of variables to be used
+        summary_output (str): output file for summary
+        r_squared_output (str): output file for r_squared
+
+    Returns:
+        None
+    """
     data = merge_multiple_dataframe(inputs)
     # Convert to lowercase array
     if "None" in variables:
