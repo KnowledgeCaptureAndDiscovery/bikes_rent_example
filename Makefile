@@ -1,11 +1,9 @@
-all: build-image run-docker
-
-build-image:
-	docker build -t mosorio/bikes_rent .
+all: run-docker
 
 run-docker:
+	docker build -t mosorio/bikes_rent .
 	docker run --rm \
-		mosorio/bikes_rent:1.0.0 \
+		mosorio/bikes_rent \
 			python main.py \
 				--inputs \
 					bikes-2021-ny.csv \

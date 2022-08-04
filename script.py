@@ -69,6 +69,8 @@ def run_model(inputs, variables, summary_output, r_squared_output):
     """
     data = merge_multiple_dataframe(inputs)
     # Convert to lowercase array
+    if not isinstance(variables, list):
+        variables = list(variables)
     if "None" in variables:
         variables.remove("None")
     variables = [variable.lower() for variable in variables]
