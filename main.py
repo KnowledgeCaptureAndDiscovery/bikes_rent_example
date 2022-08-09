@@ -5,8 +5,8 @@ from script import run_model
 parser = argparse.ArgumentParser()
 parser.add_argument("--inputs", nargs='*', help="Input file", required=True)
 parser.add_argument("--variables", nargs='*', help="Variables to be used", required=True)
-parser.add_argument("--summary", help="Summary", default=None)
-parser.add_argument("--r_squared", help="p value", default=None)
+parser.add_argument("--summary", help="Summary", default=Empty)
+parser.add_argument("--r_squared", help="p value", default=Empty)
 args = parser.parse_args()
 
 def parsed_args(args):

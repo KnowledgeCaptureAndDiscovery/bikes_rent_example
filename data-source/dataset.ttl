@@ -3,7 +3,7 @@
         <http://www.w3.org/2000/01/rdf-schema#label>
                 "Bikes info year 2019 and 2020 - NYC" ;
         <http://disk-project.org/ontology/disk#hasVariableName>
-                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday", "None";
+                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday", "Empty";
         <http://purl.org/dc/terms/Location>
                 "New York" ;
         <http://www.w3.org/ns/dcat#accessURL>
@@ -20,7 +20,7 @@
         <http://www.w3.org/2000/01/rdf-schema#label>
                 "Bikes info year 2021 - NYC" ;
         <http://disk-project.org/ontology/disk#hasVariableName>
-                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday", "None";
+                "Temperature" , "Season", "Weather Situation", "Humidity" , "Ambient Temperature" , "Wind Speed" , "Month" , "Holiday" , "Weekday" , "Workday", "Empty";
         <http://purl.org/dc/terms/Location>
                 "New York" ;
         <http://www.w3.org/ns/dcat#accessURL>
