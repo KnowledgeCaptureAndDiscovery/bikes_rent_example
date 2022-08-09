@@ -33,13 +33,13 @@ def map_variable_name(variable: str) -> str:
     }
     if variable in map_dict:
         return map_dict[variable]
-    return Empty
+    return None
 
 def check_variables(variables, df):
     for index in range(len(variables)):
         variable = variables[index]
         if variable not in df.columns:
-            if map_variable_name(variable) is Empty:
+            if map_variable_name(variable) is None:
                 print("Variable " + variable + " not found in dataframe")
                 exit(1)
             variables[index] = map_variable_name(variable)
@@ -87,12 +87,12 @@ def run_model(inputs, variables, summary_output, r_squared_output):
 
     model = sm.OLS.from_formula(model_variables, data=data).fit()
 
-    if r_squared_output is not Empty:
+    if r_squared_output is not None:
         write_file(r_squared_output, str(model.rsquared))
     else:
         print(f"""R squared: {model.rsquared}""")
     
-    if summary_output is not Empty:
+    if summary_output is not None:
         write_file(summary_output, model.summary().as_text())
     else:
         print(model.summary().as_text())
