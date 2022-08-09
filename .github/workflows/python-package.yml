@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image on master branch
-        if: github.event_name == 'push' && github.ref == "refs/heads/master"
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: docker/build-push-action@v3.0.0
         with:
           push: true
