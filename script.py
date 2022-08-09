@@ -53,6 +53,7 @@ def parsed_args(args):
 
 
 def write_file(file, content):
+    print(f"""Writing to {file}""")
     with open(file, "w") as f:
         f.write(content)
 

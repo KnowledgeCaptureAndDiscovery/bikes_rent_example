@@ -38,3 +38,29 @@ jobs:
     - name: Test with pytest
       run: |
         pytest .
+
+    - name: Create value as an environment variable
+      run: |
+        echo "DOCKER_TAG=${GITHUB_SHA}" >> $GITHUB_ENV
+
+    - name: Login to DockerHub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push Docker image on master branch
+      if: github.event_name == 'push' && github.ref == "refs/heads/master"
+      uses: docker/build-push-action@v3.0.0
+      with:
+        push: true
+        context: .
+        tags: ikcap/bikes_rent:latest, ikcap/bikes_rent:${{ GITHUB_ENV }}
+
+
+    - name: Build and push Docker image 
+      uses: docker/build-push-action@v3.0.0
+      with:
+        push: true
+        context: .
+        tags: ikcap/bikes_rent:${{ GITHUB_ENV }}
