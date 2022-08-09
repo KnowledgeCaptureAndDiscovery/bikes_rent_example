@@ -57,6 +57,11 @@ def write_file(file, content):
     with open(file, "w") as f:
         f.write(content)
 
+def remove_items(target_list, item):
+    # using list comprehension to perform the task
+    res = [i for i in target_list if i != item]
+    return res
+
 def run_model(inputs, variables, summary_output, r_squared_output):
     """
     Args:
@@ -72,8 +77,7 @@ def run_model(inputs, variables, summary_output, r_squared_output):
     # Convert to lowercase array
     if not isinstance(variables, list):
         variables = list(variables)
-    if "None" in variables:
-        variables.remove("None")
+    variables = remove_items(variables, "None")
     variables = [variable.lower() for variable in variables]
     check_variables(variables, data)
     # concatenate list of strings using comma
