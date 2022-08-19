@@ -35,7 +35,7 @@ jobs:
           commands: |
             docker run -i --rm -v `pwd`:/workdir ikcap/bikes_rent:bcd48921c6e2ed502b84c768b7408e9466a9d576 bash -c "
               cd /workdir &&
-              mkdir -p /results &&
+              mkdir -p ./results &&
               python /usr/src/app/main.py \
                 --inputs \
                         data/bikes-2021-ny.csv \
