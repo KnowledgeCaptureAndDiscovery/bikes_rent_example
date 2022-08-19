@@ -1,0 +1,21 @@
+version: 0.6.0
+inputs:
+  files:
+    - data/
+  parameters:
+    events: 20000
+    variables: "Temperature Humidity"
+workflow:
+  type: serial
+  specification:
+    steps:
+      - name: predict 
+        environment: 'ikcap/bikes_rent:bcd48921c6e2ed502b84c768b7408e9466a9d576'
+        kubernetes_memory_limit: '256Mi'
+        commands:
+        - mkdir -p results
+        - python /usr/src/app/main.py --inputs data/* --variables ${variables} --r_squared results/r_squared.txt --summary results/summary.txt
+outputs:
+  files:
+    - results/r_squared.txt
+    - results/summary.txt
