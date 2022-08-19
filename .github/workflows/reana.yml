@@ -42,5 +42,5 @@ jobs:
                         data/bikes-2019-2020-ny.csv \
                 --variables temp  hum  windspeed  season  holiday  weekday  atemp Empty \
                 --r_squared results/r_squared.txt \
-                --summary results/summary.txt
+                --summary results/summary.txt "
             ls -l `pwd`/
