@@ -3,8 +3,8 @@ inputs:
   files:
     - data/
   parameters:
-    events: 20000
     variables: "Temperature Humidity"
+    databikes: "https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2019-2020-ny.csv"
 workflow:
   type: serial
   specification:
@@ -14,7 +14,7 @@ workflow:
         kubernetes_memory_limit: '256Mi'
         commands:
         - mkdir -p results
-        - python /usr/src/app/main.py --inputs data/* --variables ${variables} --r_squared results/r_squared.txt --summary results/summary.txt
+        - python /usr/src/app/main.py --inputs ${databikes} --variables ${variables} --r_squared results/r_squared.txt --summary results/summary.txt
 outputs:
   files:
     - results/r_squared.txt
