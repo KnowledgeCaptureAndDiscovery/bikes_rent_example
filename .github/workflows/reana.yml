@@ -1,0 +1,46 @@
+# This file is part of REANA.
+# Copyright (C) 2020, 2021 CERN.
+#
+# REANA is free software; you can redistribute it and/or modify it
+# under the terms of the MIT License; see LICENSE file for more details.
+
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 7 * * 1'
+
+jobs:
+  cwl-validate:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+#      - name: Validate CWL spec
+#        uses: reanahub/reana-github-actions/local-validate@v1
+#        with:
+#          reana_specs: reana-cwl*.yaml
+
+  serial-local-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run Serial locally
+        uses: reanahub/reana-github-actions/local-run@v1
+        with:
+          commands: |
+            docker run -i --rm -v `pwd`:/workdir ikcap/bikes_rent:bcd48921c6e2ed502b84c768b7408e9466a9d576 bash -c "
+              cd /workdir &&
+              mkdir results &&
+              python /usr/src/app/main.py \
+                --inputs \
+                        data/bikes-2021-ny.csv \
+                        data/bikes-2019-2020-ny.csv \
+                --variables "temp  hum  windspeed  season  holiday  weekday  atemp Empty" \
+                --r_squared results/r_squared.txt \
+                --summary results/summary.txt  &&  \
+                ls -l `pwd`/
