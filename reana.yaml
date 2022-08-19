@@ -3,7 +3,6 @@ inputs:
   files:
     - data/
   parameters:
-    events: 20000
     variables: "Temperature Humidity"
 workflow:
   type: serial
