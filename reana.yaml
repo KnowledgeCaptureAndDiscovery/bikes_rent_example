@@ -1,10 +1,10 @@
 version: 0.6.0
 inputs:
   files:
-    - data/
+    - data/bikes-2019-2020-ny.csv
   parameters:
     variables: "Temperature Humidity"
-    databikes: "https://raw.githubusercontent.com/mosoriob/bikes_rent/master/data/bikes-2019-2020-ny.csv"
+    databikes: data/bikes-2019-2020-ny.csv
 workflow:
   type: serial
   specification:
